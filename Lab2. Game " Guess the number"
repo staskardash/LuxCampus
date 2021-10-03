@@ -1,0 +1,29 @@
+import java.util.Scanner;
+import java.util.Random;
+
+class Game{
+	public static void main(String[] args) {
+		System.out.println("Let's play! Try to guess the number from 1 to 100");
+
+		Random random = new Random ();
+		int randomValue = random.nextInt(100);
+		//System.out.println(randomValue);
+
+		Scanner scanner; //declare
+		scanner = new Scanner(System.in);
+
+		while (true) {
+			String line = scanner.nextLine();
+			int value = Integer.parseInt(line);
+			if (value > randomValue) {
+				System.out.println("Your number is higher");	
+			}
+			else if (value < randomValue) {
+				System.out.println("Your number is lower");
+			}
+			else {
+				System.out.println("You right");
+			}
+		}
+	}
+}
